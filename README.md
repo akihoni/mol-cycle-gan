@@ -1,7 +1,7 @@
 # Modification
 I would like to modify the model for adapting the molecular generation task.
 
-Mainly by tuning the generator by reinforcement learning (the `train_label_rl` script).
+Mainly by tuning the generator by reinforcement learning (the `train_label_rl.py` script).
 
 # Mol-CycleGAN - a generative model for molecular optimization
 Official implementation of Mol-CycleGAN for molecular optimization.
