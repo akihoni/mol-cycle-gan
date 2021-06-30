@@ -1,12 +1,12 @@
+# Modification
+I would like to modify the model for adapting the molecular generation task.
+
+Mainly by tuning the generator by reinforcement learning.
+
 # Mol-CycleGAN - a generative model for molecular optimization
 Official implementation of Mol-CycleGAN for molecular optimization.
 
 Keras CycleGan implementation is based on <a href="https://github.com/tjwei/GANotebooks">[tjwei/GANotebooks]</a>.
-
-## modification
-I would like to modify the model for adapting the molecular generation task.
-
-Mainly by tuning the generator by reinforcement learning.
 
 ## Requirements
 We highly recommend to use conda for package management -- the `environment.yml` file is provided.
