@@ -15,8 +15,8 @@ from jtvae import (Vocab,
 
 main_label_path = './pred_model/fruity_stat_new.pkl'
 # penl1_label_path = './pred_model/sweet_stat.pkl'
-decode_path = './210627_data/model.iter-6'
-vocab_path = './210627_data/vocab.txt'
+decode_path = './mine_3/model.iter-6'
+vocab_path = './mine_3/vocab.txt'
 
 def load_reward_model(model_path):
     model = Net()
@@ -26,7 +26,7 @@ def load_reward_model(model_path):
 
 def load_decode_model(hidden_size=450, latent_size=56, depth=3):
     model_path = decode_path
-    vocab_path = './210627_data/vocab.txt'
+    # vocab_path = './210627_data/vocab.txt'
     vocab = [x.strip("\r\n ") for x in open(vocab_path)]
     vocab = Vocab(vocab)
 
@@ -61,9 +61,11 @@ def decode_from_vector(latent_vector, model):
     return smiles
 
 
-def reward_fn(vector, defult = 1):
+def reward_fn(vector, defult = 0):
     model_decode = load_decode_model(hidden_size=450, latent_size=56, depth=3)
     smiles = decode_from_vector(vector, model_decode)
+    if not smiles:
+        return defult
     mol = Chem.MolFromSmiles(smiles)
 
     if not mol:
